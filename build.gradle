@@ -1,0 +1,20 @@
+defaultTasks 'clean', 'jar'
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.8.2'
+}
+
+test {
+    testLogging {
+        events 'passed'
+    }
+}
+
+version = '1.4.1'
+archivesBaseName = "scrypt"

@@ -9,7 +9,7 @@ JAVA_HOME ?= $(realpath $(dir $(realpath $(shell which java)))../)
 ifeq ($(TARGET), darwin)
 	DYLIB     := dylib
 	LDFLAGS	  := -dynamiclib -Wl,-undefined -Wl,dynamic_lookup -Wl,-single_module
-	CFLAGS    += -I $(JAVA_HOME)/Headers/
+	CFLAGS    += -I $(JAVA_HOME)/include/ -I $(JAVA_HOME)/include/$(TARGET)
 else
 	DYLIB     := so
 	LDFLAGS   := -shared
